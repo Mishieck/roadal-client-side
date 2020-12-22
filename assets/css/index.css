@@ -1,0 +1,245 @@
+/******************************************************************************************************************
+    Global
+******************************************************************************************************************/
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-outline: none;
+  outline: none;
+}
+
+.btn:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-outline: none;
+  outline: none;
+}
+
+.btn.active,
+.btn:active {
+  box-shadow: none;
+}
+
+hr {
+  color: white;
+}
+
+.reduce-opacity {
+  opacity: 0.9;
+}
+
+.underline {
+  border-bottom: 1px #ffffff solid;
+}
+
+.img-white {
+  filter: invert(100%);
+}
+
+.box-shad {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.small-text {
+  font-size: 0.8em;
+}
+
+.medium-icon {
+  font-size: 1.5em;
+}
+
+/******************************************************************************************************************
+    Body
+******************************************************************************************************************/
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Opera Fix */
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+  /* negate effect of float*/
+}
+
+/******************************************************************************************************************
+    Navbar
+******************************************************************************************************************/
+.navbar {
+  height: 3em;
+}
+.navbar #nav-container #search-btn i {
+  font-size: 1.2em;
+}
+.navbar #nav-container #nav-dropdown a i {
+  font-size: 1.2em;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+/******************************************************************************************************************
+    Sidebar
+******************************************************************************************************************/
+.sidebar-hide {
+  margin-left: -300px;
+}
+
+.sidebar-show {
+  margin-left: 0;
+}
+
+#sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* top layer */
+  z-index: 9999;
+  transition: all 0.5s;
+}
+#sidebar a {
+  cursor: pointer;
+}
+#sidebar #sidebar-header {
+  margin-top: 1em;
+}
+#sidebar #sidebar-header #brand-label {
+  font-size: 1.5em;
+}
+#sidebar .border-lg {
+  border-width: 0.1em !important;
+}
+#sidebar ul .border-low {
+  border-top: 1px #c5c5c5 solid;
+}
+#sidebar ul .sidebar-heading {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #d6d6d6;
+}
+#sidebar ul li {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+#sidebar ul li a {
+  width: 100%;
+}
+#sidebar ul li a:hover {
+  background-color: #0a6894;
+}
+#sidebar ul li #allione-img {
+  object-fit: contain;
+  height: 24px;
+}
+
+.overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay.show {
+  z-index: 9998;
+}
+
+.overlay.hide {
+  z-index: -1000;
+}
+
+/*****************************************************************************************************************
+    Map
+*****************************************************************************************************************/
+#map {
+  height: 100vh;
+  z-index: 0;
+}
+
+/* Popup content *******************************************************/
+.list-group-item {
+  font-size: 1.1em;
+}
+
+.image-controls img {
+  object-fit: contain;
+  width: 16px;
+}
+
+div.passability img {
+  width: 24px;
+  height: auto;
+}
+
+.sitename {
+  font-size: 1.3em;
+}
+
+.site-coords, .passability span, .site-images-header, .affected-roads-header, .activities-header {
+  font-size: 1.2em;
+}
+
+.site-image {
+  max-width: 260px;
+  height: auto;
+}
+
+.image-controls a img {
+  object-fit: contain;
+  width: 16px;
+}
+
+/*****************************************************************************************************************
+    Footer
+******************************************************************************************************************/
+.footer {
+  position: relative;
+  margin-top: -2.6em;
+  /* negative value of footer height */
+  height: 2.6em;
+  clear: both;
+}
+.footer span {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+/*****************************************************************************************************************
+    Modals
+******************************************************************************************************************/
+.show-alert {
+  display: block;
+}
+
+.hide-alert {
+  display: none;
+}
+
+#reporter-advice {
+  font-size: 0.9em;
+}

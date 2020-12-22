@@ -1,0 +1,6 @@
+body {
+  height: 100%;
+}
+body .content {
+  min-height: 100vh;
+}

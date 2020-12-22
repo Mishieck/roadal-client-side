@@ -1,0 +1,107 @@
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.btn:focus {
+  border-color: inherit;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.text-pri {
+  color: #0490cf !important;
+}
+
+.bg-pri {
+  background-image: none !important;
+  background: #0490cf !important;
+  background-color: #0490cf !important;
+}
+
+.text-sec {
+  color: #f4b619 !important;
+}
+
+.bg-sec {
+  background-image: none !important;
+  background: #f4b619 !important;
+  background-color: #f4b619 !important;
+}
+
+.text-ter {
+  color: #444488 !important;
+}
+
+.bg-ter {
+  background-image: none !important;
+  background: #444488 !important;
+  background-color: #444488 !important;
+}
+
+/*Bootstrap model*/
+@media (min-width: 576px) {
+  .full-screen-model .modal-dialog {
+    max-width: none;
+  }
+}
+.full-screen-model .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.full-screen-model .modal-dialog {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.full-screen-model .modal-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.full-screen-model .modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  padding: 10px;
+  border: 0;
+}
+.full-screen-model .modal-body {
+  position: absolute;
+  top: 50px;
+  bottom: 60px;
+  width: 100%;
+  overflow: auto;
+}
+.full-screen-model .modal-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+}

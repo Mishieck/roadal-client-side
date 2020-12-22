@@ -1,0 +1,116 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+      "type": "Feature",
+      "properties": {
+        "name": "Arcades Roundabout",
+        "amenity": "roundabout",
+        "images": [
+            "/assets/img/sites/asphalt-3431322_640.jpg"
+        ],
+        "affectedRoads": [],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.31819683,
+          -15.38979694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northend Roundabout",
+        "amenity": "roundabout",
+        "images": [
+            "/assets/img/sites/excavators-391143_640.jpg"
+        ],
+        "affectedRoads": [],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.28021138,
+          -15.40843623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Munali Roundabout",
+        "amenity": "roundabout",
+        "images": [],
+        "affectedRoads": [],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.3431521,
+          -15.38635749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Manda Hill Crossroads",
+        "amenity": "crossroads",
+        "images": [
+            "/assets/img/sites/road-construction-192894_640.jpg"
+        ],
+        "affectedRoads": [],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.30612387,
+          -15.4000794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mandevu Roundabout",
+        "amenity": "roundabout",
+        "images": [],
+        "affectedRoads": [
+            "Lumumba"
+        ],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.2779999,
+          -15.37619397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Southend Roundabout",
+        "amenity": "roundabout",
+        "images": [
+            "/assets/img/sites/site-2630480_640.jpg"
+        ],
+        "affectedRoads": [],
+        "activities": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            28.283034,
+            -15.424914
+        ]
+      }
+    }
+  ]
+}

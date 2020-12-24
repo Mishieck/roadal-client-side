@@ -1,0 +1,58 @@
+#sidebar {
+  margin-left: -300px;
+  min-width: 300px;
+  max-width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* top layer */
+  z-index: 9999;
+  transition: all 0.4s;
+}
+
+#sidebar.hide {
+  margin-left: -300px;
+}
+
+#sidebar.show {
+  margin-left: 0;
+}
+
+#sidebar a {
+  cursor: pointer;
+}
+#sidebar #sidebar-header {
+  margin-top: 1em;
+}
+#sidebar #sidebar-header .logo {
+  width: 32px;
+}
+#sidebar #sidebar-header #brand-label {
+  font-size: 1.5em;
+}
+#sidebar .border-lg {
+  border-width: 0.1em !important;
+}
+#sidebar ul .border-low {
+  border-top: 1px #c5c5c5 solid;
+}
+#sidebar ul .sidebar-heading {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #d6d6d6;
+}
+#sidebar ul li {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+#sidebar ul li a {
+  width: 100%;
+}
+#sidebar ul li a:hover {
+  background-color: #0a6894;
+}
+#sidebar ul li #allione-img {
+  object-fit: contain;
+  height: 24px;
+}

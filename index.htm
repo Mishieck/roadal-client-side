@@ -44,12 +44,10 @@
 
 
     <div class="wrapper">
-      <nav class="overflow-auto fg-white bg-pri sidebar-hide" id="sidebar">
+      <nav class="overflow-auto fg-white bg-pri" id="sidebar">
         <div class="px-3 d-flex flex-row justify-content-between align-items-end" id="sidebar-header">
           <a class="navbar-brand d-inline-block nostyle text-light" href="/">
-            <span class="rounded p-1 bg-light">
-              <img class="" src="/assets/img/logo.svg" alt="">
-            </span>
+            <img class="logo" src="/assets/img/logo.svg" alt="">
             <span class="ml-2">Roadal</span>
           </a>
           <a href="#" class="reduce-opacity hide-sidebar" id="hide-sidebar">
@@ -81,18 +79,18 @@
 
           <li>
             <div class="border-low mb-2 ml-1">
-              <span class="sidebar-heading">APROMAPP</span>
+              <span class="sidebar-heading">ROADAL</span>
             </div>
           </li>
 
           <li class="hide-sidebar">
-            <a href="./about.html" class="nostyle d-inline-block mb-1 py-1 pl-2 text-light">
+            <a href="/assets/htm/about.htm" class="nostyle d-inline-block mb-1 py-1 pl-2 text-light">
               <i class="fa fa-info-circle medium-icon" aria-hidden="true"></i>
               <span class="ml-2">About Us</span>
             </a>
           </li>
           <li class="hide-sidebar">
-            <a href="./contact.html" class="nostyle d-inline-block mb-3 py-1 pl-2 text-light">
+            <a href="/assets/htm/contact.htm" class="nostyle d-inline-block mb-3 py-1 pl-2 text-light">
               <i class="fa fa-phone medium-icon" aria-hidden="true"></i>
               <span class="ml-2">Contact Us</span>
             </a>
@@ -104,12 +102,12 @@
 
     <aside id="Notification">
 
-    <div class="overlay hide"></div>
+    <div class="overlay"></div>
   </div>
 
 
   <footer class="footer d-flex justify-content-end">
-    <span class="text-left fg-white bg-pri">&copy; 2020 Roadal | <a href="https://leafletjs.com/" class="fg-white underline" target="_blank">Leaflet</a> | &copy; <a href="https://openstreetmap.org/copyright" class="fg-white underline" target="_blank">OpenStreetMap contributors</a> | Developed by <a href="https://mishieck.github.io" class="fg-white underline" target="_blank">Mishieck Mwale</a></span>
+    <span class="text-left fg-white bg-pri">&copy; 2020 Roadal | <a href="https://leafletjs.com/" class="fg-white" target="_blank">Leaflet</a> | &copy; <a href="https://openstreetmap.org/copyright" class="fg-white" target="_blank">OpenStreetMap contributors</a> | Developed by <a href="https://mishieck.github.io" class="fg-white" target="_blank">Mishieck Mwale</a></span>
   </footer>
 
 
@@ -303,8 +301,6 @@
     <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js" integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ==" crossorigin=""></script>
 
     <!-- Custom JavaScript -->
-    <script>
-      $.getScript("/assets/js/index.js");
-    </script>
+    <script type="module" src="/assets/js/index.js"></script>
 </body>
 </html>

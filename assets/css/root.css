@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #3f7ffe;
+  --secondar-color: #ff0000;
+}
+
+
 a.nostyle:link {
   text-decoration: inherit;
   color: inherit;
@@ -28,8 +34,8 @@ a.nostyle:visited {
 
 .bg-pri {
   background-image: none !important;
-  background: #0490cf !important;
-  background-color: #0490cf !important;
+  background: var(--primary-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .text-sec {

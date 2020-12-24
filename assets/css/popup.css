@@ -1,0 +1,31 @@
+
+.list-group-item {
+  font-size: 1.1em;
+}
+.image-controls img {
+  object-fit: contain;
+  width: 16px;
+}
+
+div.passability img {
+  width: 24px;
+  height: auto;
+}
+
+.sitename {
+  font-size: 1.3em;
+}
+
+.site-coords, .passability span, .site-images-header, .affected-roads-header, .activities-header {
+  font-size: 1.2em;
+}
+
+.site-image {
+  max-width: 260px;
+  height: auto;
+}
+
+.image-controls a img {
+  object-fit: contain;
+  width: 16px;
+}

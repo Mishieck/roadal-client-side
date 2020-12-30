@@ -16,7 +16,7 @@ let map,
     circle,
     roadSignIcon;
 
-const initMap = () => {
+const initMap = async () => {
   map = L.map('map').setView(LUSAKA_COORDS, 16);
   $('.leaflet-control-attribution' ).css('display', 'none');
 
@@ -27,16 +27,17 @@ const initMap = () => {
   circle = L.circle();
 
   // Map controls positioning 
-  addControlPlaceholders(map);
+  await addControlPlaceholders(map);
 
   // Change the position of the Zoom Control to a newly created placeholder.
   map.zoomControl.setPosition('verticalcenterright');
 
-  roadSignIcon = createIconClass();
-  addOverlays();
+  roadSignIcon = await createIconClass();
+  await addOverlays();
+  await addEvents();
 }
 
-const createIconClass = () => {
+const createIconClass = async () => {
   return L.Icon.extend({
     options: {
       iconSize:     [40, 44],
@@ -63,7 +64,7 @@ const onEachFeature = async (feature, layer) => {
 }
 
 // Create additional Control placeholders
-const addControlPlaceholders = (map) => {
+const addControlPlaceholders = async (map) => {
   const corners = map._controlCorners,
         l = 'leaflet-',
         container = map._controlContainer;
@@ -77,7 +78,7 @@ const addControlPlaceholders = (map) => {
   }
 }
 
-const locateUser = () => {
+const locateUser = async () => {
   map.locate({
     setView: true, 
     watch: true
@@ -92,6 +93,35 @@ const locateUser = () => {
       fillOpacity: 0.2
     }).addTo(map);
     map.setView([e.latitude, e.longitude], 16)
+  });
+}
+
+const addEvents = async () => {
+  // map.on('zoomend', function() {
+  //     let currentZoom = map.getZoom();
+  //     circle.setRadius(currentZoom);
+  // });
+
+  $('.basemap').on('change', (e) => {
+      switchBaseLayer(e.target.value);
+  });
+
+  $('#locate').on('click', () => {
+      locateUser();
+  });
+
+  $('.site-img-link').on('click',  () => {
+      alert('ok')
+      // $('#image-pane').append($('<img>', {"src": feature.geometry.coordinates[0]}));
+  });
+
+  $('.next').on('click', () => {
+      $('.image-count').text(parseInt($('.image-count').text()) + 1);
+      $('.site-image').attr('src', feature.properties.images[parseInt($('.image-count').text())]);
+  });
+
+  $('.prev').on('click', () => {
+      $('.site-image').attr('src', feature.properties.images[parseInt($('.image-count').text()) - 2]);
   });
 }
   

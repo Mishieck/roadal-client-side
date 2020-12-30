@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Roadal</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -15,9 +17,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/root.css">
     <link rel="stylesheet" href="/assets/css/index.css">
-    <title>Roadal</title>
   </head>
   <body>
+    <!-- Top Navigation -->
     <nav class="navbar fixed-top d-flex flex-row justify-content-between m-0">
       <div class="d-flex flex-column justify-content-center" id="nav-container">
         <div class="rounded-lg d-flex flex-row justify-content-center pt-1 pb-1 bg-pri" id="nav-toolbar">
@@ -42,7 +44,7 @@
       </div>
     </nav>
 
-
+    <!-- Wrapper -->
     <div class="wrapper">
       <nav class="overflow-auto fg-white bg-pri" id="sidebar">
         <div class="px-3 d-flex flex-row justify-content-between align-items-end" id="sidebar-header">
@@ -95,15 +97,13 @@
               <span class="ml-2">Contact Us</span>
             </a>
           </li>
-      </ul>
-    </nav>
-    
-    <main id="map"></main>
+        </ul>
+      </nav>
+      
+      <main id="map"></main>
 
-    <aside id="Notification">
-
-    <div class="overlay"></div>
-  </div>
+      <div class="overlay"></div>
+    </div>
 
 
   <footer class="footer d-flex justify-content-end">
@@ -112,188 +112,180 @@
 
 
     
-        <!-----------------------------------------------------------------------------------------------------------------
-            model boxes
-        ------------------------------------------------------------------------------------------------------------------>
-         
-        <!-- Site image viewer ---------------------------------------------------------------------------------------------------------->
-        <div class="modal fade" name="image-viewer-model" id="image-viewer-model" tabindex="-1" role="dialog" aria-labelledby="image-viewer-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="image-viewer-header">Site Images</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  <div id="image-view">
-
-                  </div>
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-              </div>
-              </div>
-          </div>
-      </div>
-
-      <!-- Report a disturbance ---------------------------------------------------------------------------------------------------------->
-      <form class="modal fade" name="report-dist" id="report-dist-model" tabindex="-1" role="dialog" aria-labelledby="report-dist-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="report-dist-header">Report a Disturbance</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  <div class="alert alert-dismissible fade hide-alert" id="email-alert" role="alert">
-                      <span id="report-dist-alert-msg"></span>
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <p class="text-danger" id="reporter-advice">Please make sure that you are at the site of activity before submitting your report. This is because your location is automatically submitted with your report. Get as close as possible to the site to increase the accuracy of the location.</p>
-                  <div class="form-group">
-                      <label for="reporter-email">Your email address (optional)</label>
-                      <input type="email" name="reporter-email" class="form-control" id="reporter-email" placeholder="example@example.com">
-                  </div>
-                  <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                          <label class="input-group-text" for="sex">Nature of disturbance</label>
-                      </div>
-                      <select name="disturbance" class="custom-select" id="sex">
-                          <option selected>Road Construction</option>
-                          <option value="2">Road Maintainace</option>
-                          <option value="3">Electricity site</option>
-                          <option value="4">Water site</option>
-                          <option value="5">Sewage site</option>
-                          <option value="6">Road Accident</option>
-                          <option value="7">Other</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="dist-description">Description of activity (optional)</label>
-                      <textarea name="dist-description" class="form-control" id="dist-description" rows="5"></textarea>
-                  </div>
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="submit" class="btn rounded-pill fg-white bg-pri reduce-opacity" id="submit-report-btn">Submit report</button>
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Cancel</button>
-              </div>
-              </div>
-          </div>
-      </form>
-
+    <!-----------------------------------------------------------------------------------------------------------------
+          model boxes
+    ------------------------------------------------------------------------------------------------------------------>
       
-      <!-- Notifications ---------------------------------------------------------------------------------------------------------->
-      <div class="modal fade" name="notifications-model" id="notifications-model" tabindex="-1" role="dialog" aria-labelledby="notifications-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="notifications-header">Notifications</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  <div>No notifications available</div>
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-              </div>
-              </div>
-          </div>
+    <!-- Site image viewer ---------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" name="image-viewer-model" id="image-viewer-model" tabindex="-1" role="dialog" aria-labelledby="image-viewer-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="image-viewer-header">Site Images</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div id="image-view"></div>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Search results ---------------------------------------------------------------------------------------------------------->
-      <div class="modal fade" name="search-model" id="search-model" tabindex="-1" role="dialog" aria-labelledby="search-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="search-header">Search Results</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  <ul class="list-group list-group-flush roads" id="search-results">
-                  </ul>
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-              </div>
-              </div>
+    <!-- Report a disturbance ---------------------------------------------------------------------------------------------------------->
+    <form class="modal fade" name="report-dist" id="report-dist-model" tabindex="-1" role="dialog" aria-labelledby="report-dist-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="report-dist-header">Report a Disturbance</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div class="alert alert-dismissible fade hide-alert" id="email-alert" role="alert">
+            <span id="report-dist-alert-msg"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+          <p class="text-danger" id="reporter-advice">Please make sure that you are at the site of activity before submitting your report. This is because your location is automatically submitted with your report. Get as close as possible to the site to increase the accuracy of the location.</p>
+          <div class="form-group">
+            <label for="reporter-email">Your email address (optional)</label>
+            <input type="email" name="reporter-email" class="form-control" id="reporter-email" placeholder="example@example.com">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="sex">Nature of disturbance</label>
+            </div>
+            <select name="disturbance" class="custom-select" id="sex">
+              <option selected>Road Construction</option>
+              <option value="2">Road Maintainace</option>
+              <option value="3">Electricity site</option>
+              <option value="4">Water site</option>
+              <option value="5">Sewage site</option>
+              <option value="6">Road Accident</option>
+              <option value="7">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dist-description">Description of activity (optional)</label>
+            <textarea name="dist-description" class="form-control" id="dist-description" rows="5"></textarea>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn rounded-pill fg-white bg-pri reduce-opacity" id="submit-report-btn">Submit report</button>
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Cancel</button>
+        </div>
+        </div>
       </div>
+    </form>
 
-      <!-- Search results not found ---------------------------------------------------------------------------------------------------------->
-      <div class="modal fade" name="no-results-model" id="no-results-model" tabindex="-1" role="dialog" aria-labelledby="no-results-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="no-results-header">No Results</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  No results found.
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-              </div>
-              </div>
-          </div>
+    
+    <!-- Notifications ---------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" name="notifications-model" id="notifications-model" tabindex="-1" role="dialog" aria-labelledby="notifications-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="notifications-header">Notifications</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div>No notifications available</div>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        </div>
       </div>
+    </div>
 
-      
-      <!-- Can not submit  ---------------------------------------------------------------------------------------------------------->
-      <div class="modal fade" name="no-submit-model" id="no-submit-model" tabindex="-1" role="dialog" aria-labelledby="no-submit-header" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-              <!-- header -->
-              <div class="modal-header">
-                  <h5 class="modal-title" id="no-submit-header">Can not submit report</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <!-- body -->
-              <div class="modal-body">
-                  Submitting of reports is not allowed at the moment.
-              </div>
-              <!-- footer -->
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-              </div>
-              </div>
-          </div>
+    <!-- Search results ---------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" name="search-model" id="search-model" tabindex="-1" role="dialog" aria-labelledby="search-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="search-header">Search Results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <ul class="list-group list-group-flush roads" id="search-results"></ul>
+        </div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        </div>
       </div>
+    </div>
+
+    <!-- Search results not found ---------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" name="no-results-model" id="no-results-model" tabindex="-1" role="dialog" aria-labelledby="no-results-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="no-results-header">No Results</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">No results found.</div>
+        <!-- footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Can not submit  ---------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" name="no-submit-model" id="no-submit-model" tabindex="-1" role="dialog" aria-labelledby="no-submit-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="no-submit-header">Can not submit report</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">Submitting of reports is not allowed at the moment.</div>
+        <!-- footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   
+    
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
@@ -302,5 +294,5 @@
 
     <!-- Custom JavaScript -->
     <script type="module" src="/assets/js/index.js"></script>
-</body>
+  </body>
 </html>

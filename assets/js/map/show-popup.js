@@ -51,7 +51,7 @@ export const showPopup = async (feature, layer) => {
 
   let $road = null;
 
-  if(roads[0]) {
+  if (roads[0]) {
     let $list = [];
 
     roads.forEach(road => {

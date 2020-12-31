@@ -1,20 +1,18 @@
-import { showPopup } from "./show-popup.js";
+import { popup } from "./popup.js";
 
 
 const LUSAKA_COORDS = [-15.40669, 28.28713];
+const MAX_ZOOM = 19;
 
 const LAYER_URLS = {
   streets: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 };
 
-const MAX_ZOOM = 19;
-
-
 let map,
     streets,
     marker,
     circle,
-    roadSignIcon;
+    MarkerIcon;
 
 const initMap = async () => {
   map = L.map('map').setView(LUSAKA_COORDS, 16);
@@ -32,17 +30,17 @@ const initMap = async () => {
   // Change the position of the Zoom Control to a newly created placeholder.
   map.zoomControl.setPosition('verticalcenterright');
 
-  roadSignIcon = await createIconClass();
+  MarkerIcon = await MarkerIconClass();
   await addOverlays();
   await addEvents();
 };
 
-const createIconClass = async () => {
+const MarkerIconClass = async () => {
   return L.Icon.extend({
     options: {
-      iconSize:     [40, 44],
-      iconAnchor:   [20, 44],
-      popupAnchor:  [0, -44]
+      iconSize:     [48, 48],
+      iconAnchor:   [24, 48],
+      popupAnchor:  [0, -48]
     }
   });
 };
@@ -55,17 +53,19 @@ const addOverlays = async () => {
 const getOverlays = async () => (await fetch('/assets/json/main.json')).json();
 
 const onEachFeature = async (feature, layer) => {
-  let iconURL = feature.properties.passability === 'Fully Closed' ? "/assets/img/icons/road-signs/red-marker.svg"
+  const passability = feature.properties.passability;
+
+  const markerURL = feature.properties.passability === 'Fully Closed' ? "/assets/img/icons/road-signs/red-marker.svg"
   : feature.properties.passability === 'Partially Closed' ? "/assets/img/icons/road-signs/yellow-marker.svg"
   : feature.properties.passability === 'Open' ? "/assets/img/icons/road-signs/green-marker.svg"
   : "/assets/img/icons/road-signs/red-marker.svg";
 
-  const icon = new roadSignIcon({ iconUrl: iconURL });
+  const icon = new MarkerIcon({ iconUrl: markerURL });
   layer.setIcon(icon).addTo(map);
 
-  layer.on('click', async (e) => {
-    await showPopup(feature, layer);
-  });
+  const html = await popup(feature);
+  layer.bindPopup(html);
+  layer.on('click', async e => layer.openPopup());
 };
 
 // Create additional Control placeholders
@@ -84,19 +84,25 @@ const addControlPlaceholders = async (map) => {
 };
 
 const locateUser = async () => {
-  map.locate({
-    setView: true, 
-    watch: true
-  }).on('locationfound', (e) => {
+  const locateMarkerIcon = new MarkerIcon({iconUrl: '/assets/images/icons/road-signs/crosshair-marker.svg'});
+
+  map.locate({ setView: true, watch: true })
+  .on('locationfound', (e) => {
     map.removeLayer(marker);
-    const icon = new roadSignIcon({iconUrl: '/assets/images/icons/road-signs/crosshair-marker.svg'});
-    marker = L.marker(e.latlng).setIcon(icon).addTo(map);
-    circle = L.circle(e.latlng, e.accuracy/2, {
-      weight: 1,
-      color: 'blue',
-      fillColor: '#cacaca',
-      fillOpacity: 0.2
-    }).addTo(map);
+    marker = L.marker(e.latlng).setIcon(locateMarkerIcon).addTo(map);
+
+    circle = L.circle(
+      e.latlng, 
+      e.accuracy/2,
+      {
+        weight: 1,
+        color: 'blue',
+        fillColor: '#cacaca',
+        fillOpacity: 0.2
+      }
+    )
+    .addTo(map);
+
     map.setView([e.latitude, e.longitude], 16)
   });
 };
@@ -107,27 +113,8 @@ const addEvents = async () => {
   //     circle.setRadius(currentZoom);
   // });
 
-  $('.basemap').on('change', (e) => {
-      switchBaseLayer(e.target.value);
-  });
-
-  $('#locate').on('click', () => {
-      locateUser();
-  });
-
-  $('.site-img-link').on('click',  () => {
-      alert('ok')
-      // $('#image-pane').append($('<img>', {"src": feature.geometry.coordinates[0]}));
-  });
-
-  $('.next').on('click', () => {
-      $('.image-count').text(parseInt($('.image-count').text()) + 1);
-      $('.site-image').attr('src', feature.properties.images[parseInt($('.image-count').text())]);
-  });
-
-  $('.prev').on('click', () => {
-      $('.site-image').attr('src', feature.properties.images[parseInt($('.image-count').text()) - 2]);
-  });
+  $('.basemap').on('change', (e) => switchBaseLayer(e.target.value));
+  $('#locate').on('click', () => locateUser());
 };
   
 export { initMap };

@@ -1,4 +1,4 @@
-export const showPopup = async (feature, layer) => {
+export const popup = async feature => {
   const properties = feature.properties;
 
   const id = feature.id,
@@ -22,9 +22,11 @@ export const showPopup = async (feature, layer) => {
   };
 
   const createImage = image => {
+    const altText = `${name} - ${image.substring(image.lastIndexOf("/") + 1, image.lastIndexOf("@"))}`;
+
     return `
-      <a class="carousel-item active">
-        <img class="d-block w-100" src="${image}" alt="First slide">
+      <a href="#" class="carousel-item active site-image-link" data-image-src="${image.replace("@360p", "@720p")}">
+        <img class="d-block w-100" src="${image}" alt="${altText}">
       </a>
     `;
   };
@@ -98,6 +100,5 @@ export const showPopup = async (feature, layer) => {
     </section>
   `;
 
-  layer.bindPopup(html);
-  layer.openPopup();
-};
+  return html;
+}

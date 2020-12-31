@@ -35,7 +35,7 @@ const initMap = async () => {
   roadSignIcon = await createIconClass();
   await addOverlays();
   await addEvents();
-}
+};
 
 const createIconClass = async () => {
   return L.Icon.extend({
@@ -45,23 +45,28 @@ const createIconClass = async () => {
       popupAnchor:  [0, -44]
     }
   });
-}
+};
 
 const addOverlays = async () => {
   const overlays = await getOverlays();
   L.geoJSON(overlays.features, { onEachFeature });
-}
+};
 
 const getOverlays = async () => (await fetch('/assets/json/main.json')).json();
 
 const onEachFeature = async (feature, layer) => {
-  const icon = new roadSignIcon({iconUrl: '/assets/img/icons/road-signs/full-closure.svg'});
+  let iconURL = feature.properties.passability === 'Fully Closed' ? "/assets/img/icons/road-signs/red-marker.svg"
+  : feature.properties.passability === 'Partially Closed' ? "/assets/img/icons/road-signs/yellow-marker.svg"
+  : feature.properties.passability === 'Open' ? "/assets/img/icons/road-signs/green-marker.svg"
+  : "/assets/img/icons/road-signs/red-marker.svg";
+
+  const icon = new roadSignIcon({ iconUrl: iconURL });
   layer.setIcon(icon).addTo(map);
 
   layer.on('click', async (e) => {
     await showPopup(feature, layer);
   });
-}
+};
 
 // Create additional Control placeholders
 const addControlPlaceholders = async (map) => {
@@ -75,8 +80,8 @@ const addControlPlaceholders = async (map) => {
   function createCorner(vSide, hSide) {
     const className = l + vSide + ' ' + l + hSide;
     corners[vSide + hSide] = L.DomUtil.create('div', className, container);
-  }
-}
+  };
+};
 
 const locateUser = async () => {
   map.locate({
@@ -84,7 +89,7 @@ const locateUser = async () => {
     watch: true
   }).on('locationfound', (e) => {
     map.removeLayer(marker);
-    const icon = new roadSignIcon({iconUrl: '/resources/images/icons/road-signs/current-location.svg'});
+    const icon = new roadSignIcon({iconUrl: '/assets/images/icons/road-signs/crosshair-marker.svg'});
     marker = L.marker(e.latlng).setIcon(icon).addTo(map);
     circle = L.circle(e.latlng, e.accuracy/2, {
       weight: 1,
@@ -94,7 +99,7 @@ const locateUser = async () => {
     }).addTo(map);
     map.setView([e.latitude, e.longitude], 16)
   });
-}
+};
 
 const addEvents = async () => {
   // map.on('zoomend', function() {
@@ -123,6 +128,6 @@ const addEvents = async () => {
   $('.prev').on('click', () => {
       $('.site-image').attr('src', feature.properties.images[parseInt($('.image-count').text()) - 2]);
   });
-}
+};
   
 export { initMap };

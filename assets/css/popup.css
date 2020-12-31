@@ -1,7 +1,11 @@
+.popup {
+  min-width: 300px;
+}
 
 .list-group-item {
   font-size: 1.1em;
 }
+
 .image-controls img {
   object-fit: contain;
   width: 16px;

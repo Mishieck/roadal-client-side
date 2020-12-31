@@ -2,11 +2,13 @@
 	"type": "FeatureCollection",
 	"features": [{
       "type": "Feature",
+      "id": "site-1",
       "properties": {
         "name": "Arcades Roundabout",
         "amenity": "roundabout",
+        "passability": "Partially Closed",
         "images": [
-            "/assets/img/sites/asphalt-3431322_640.jpg"
+          "/assets/img/sites/archades/archades@360p.jpg"
         ],
         "affectedRoads": [],
         "activities": []
@@ -21,12 +23,12 @@
     },
     {
       "type": "Feature",
+      "id": "site-2",
       "properties": {
         "name": "Northend Roundabout",
         "amenity": "roundabout",
-        "images": [
-            "/assets/img/sites/excavators-391143_640.jpg"
-        ],
+        "passability": "Open",
+        "images": [],
         "affectedRoads": [],
         "activities": []
       },
@@ -40,10 +42,16 @@
     },
     {
       "type": "Feature",
+      "id": "site-3",
       "properties": {
         "name": "Munali Roundabout",
         "amenity": "roundabout",
-        "images": [],
+        "passability": "Fully Closed",
+        "images": [
+          "/assets/img/sites/munali/munali-1@360p.jpg",
+          "/assets/img/sites/munali/munali-2@360p.jpg",
+          "/assets/img/sites/munali/munali-3@360p.jpg"
+        ],
         "affectedRoads": [],
         "activities": []
       },
@@ -57,12 +65,12 @@
     },
     {
       "type": "Feature",
+      "id": "site-4",
       "properties": {
         "name": "Manda Hill Crossroads",
         "amenity": "crossroads",
-        "images": [
-            "/assets/img/sites/road-construction-192894_640.jpg"
-        ],
+        "passability": "Open",
+        "images": [],
         "affectedRoads": [],
         "activities": []
       },
@@ -76,10 +84,14 @@
     },
     {
       "type": "Feature",
+      "id": "site-5",
       "properties": {
         "name": "Mandevu Roundabout",
         "amenity": "roundabout",
-        "images": [],
+        "passability": "Partially Closed",
+        "images": [
+          "/assets/img/sites/mandevu/mandevu@360p.jpg"
+        ],
         "affectedRoads": [
             "Lumumba"
         ],
@@ -95,11 +107,13 @@
     },
     {
       "type": "Feature",
+      "id": "site-6",
       "properties": {
         "name": "Southend Roundabout",
         "amenity": "roundabout",
+        "passability": "Partially Closed",
         "images": [
-            "/assets/img/sites/site-2630480_640.jpg"
+          "/assets/img/sites/southend/southend@360p.jpg"
         ],
         "affectedRoads": [],
         "activities": []

@@ -34,4 +34,4 @@ const addEvents = () => {
   });
   
   // $('#nav-dd-btn').on('click', showNotifications);
-}
+};

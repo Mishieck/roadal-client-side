@@ -1,65 +1,103 @@
 export const showPopup = async (feature, layer) => {
+  const properties = feature.properties;
+
+  const id = feature.id,
+        name = properties.name,
+        passability = properties.passability,
+        images = properties.images,
+        affectedRoads = properties.affectedRoads,
+        activities = properties.activities,
+        coordinates = feature.geometry.coordinates;
+ 
+  const markerURLs = {
+    "Closed": "/assets/img/icons/road-signs/red-marker.svg",
+    "Partially Closed": "/assets/img/icons/road-signs/yellow-marker.svg",
+    "Open": "/assets/img/icons/road-signs/green-marker.svg"
+  };
+
+  const messages = {
+    "Closed": "Road is fully closed.",
+    "Partially Closed": "Road is partially closed.",
+    "Open": "Road is fully open."
+  };
+
+  const createImage = image => {
+    return `
+      <a class="carousel-item active">
+        <img class="d-block w-100" src="${image}" alt="First slide">
+      </a>
+    `;
+  };
+
+  const markerURL = markerURLs[passability];
+  const message = messages[passability];
+  const $affectedRoads = affectedRoads.map(road => `<li class="list-group-item">${road}</li>`).join("");
+  const $activities = activities.map(activity => `<li class="list-group-item">${activity}</li>`).join("");
+  let $carousel = '<div class="ml-2">No images added.</div>';
+
+  if(images[0]) {
+    const $images = images.map(createImage).join("");
+
+    $carousel = `
+      <div id="${id}" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          ${$images}
+        </div>
+        <a class="carousel-control-prev" href="#${id}" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#${id}" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    `;
+  };
+
   const html = `
-    <section>
-      <div class="ml-2 text-nowrap mt-3 sitename">Site Name</div>
+    <section class="popup m-0 p-0">
+      <header class="header h5 text-center">
+        Site Information
+      </header>
+
       <div class="border-top my-1"></div>
-      <div class="ml-2 text-nowrap mt-3 site-coords">Site Coordinates</div>
-      <div class="border-top my-1"></div>
-      <div class="mt-3">
-        <img src="../../images/icons/road-signs/full-closure.svg" alt="">
-        <span class="passability">Road Fully Closed</span>
-      </div>
-      <div class="border-top my-1"></div>
-      <div class="mt-3 images">
-        <div class="ml-2">Site Images</div>
+
+      <main>
+        <div class="ml-2 text-nowrap mt-3 sitename">${name}</div>
         <div class="border-top my-1"></div>
-        <div class="mt-2">
-            <a href="#" class="open-viewer site-img-link"><img src="" alt="" class="rounded site-image"></a>
+        <div class="ml-2 text-nowrap mt-3 site-coords">${coordinates[1]} ${coordinates[0]}</div>
+        <div class="border-top my-1"></div>
+        <div class="mt-3 passability">
+          <img class="ml-2 mr-2" src="${markerURL}" alt="" style="max-width: 32px;">
+          <span class="passability">${message}</span>
         </div>
-        <div class="d-flex justify-content-center mt-1 mb-3 image-controls">
-          <a href="#" class="mr-3 border-0 prev"><img src="/resources/images/icons/iconmonstr-arrow-79.svg" alt=""></a>
-          <span class="image-count">1</span>
-          <a href="#" class="ml-3 border-0 next"><img src="/resources/images/icons/iconmonstr-arrow-37.svg" alt=""></a>
+        <div class="border-top my-1"></div>
+        <div class="mt-3 mb-2 images">
+          <div class="ml-2 site-images-header">Site Images</div>
+          <div class="border-top my-1"></div>
+          ${$carousel}
         </div>
-      </div>
-      <div>
-        <div class="ml-2 mt-3">Affected roads</div>
-        <div class="border-top mt-1"></div>
-        <ul class="list-group list-group-flush roads">
-          <li class="list-group-item">No roads included yet</li>
-        </ul>
-      </div>
-      <div class="border-top my-1"></div>
-      <div>
-        <div class="ml-2 mt-3">Activities</div>
-        <div class="border-top mt-1"></div>
-        <ul class="list-group list-group-flush activities">
-          <li class="list-group-item">No activities included yet.</li>
-        </ul>
-      </div>
-    </section>`
+        <div class="border-top my-1"></div>
+        <div class="affected-roads-container">
+          <div class="ml-2 mt-3 affected-roads-header">Affected roads</div>
+          <div class="border-top mt-1"></div>
+          <ul class="list-group list-group-flush roads-list">
+            ${$affectedRoads}
+          </ul>
+        </div>
+        <div class="border-top my-0"></div>
+        <div class="mt-3 activities-conatainer">
+          <div class="ml-2 activities-header">Activities</div>
+          <div class="border-top mt-1"></div>
+          <ul class="list-group list-group-flush activities-list">
+            ${$activities}
+          </ul>
+        </div>
+      </main>
+    </section>
+  `;
 
   layer.bindPopup(html);
   layer.openPopup();
-
-  $('.sitename').text(feature.properties.name);
-  $('.site-coords').text(feature.geometry.coordinates[1] + '\t' + feature.geometry.coordinates[0]);
-  $('.site-image').attr('src', feature.properties.images[0]);
-
-  const roads = feature.properties.affectedRoads,
-        $roads = $('.roads');
-
-  let $road = null;
-
-  if (roads[0]) {
-    let $list = [];
-
-    roads.forEach(road => {
-      $road = $('<li>', {"class": 'list-group-item'});
-      $road.text(road);
-      $list.push($road);
-    });
-    
-    $roads.append($list);
-  }
-}
+};

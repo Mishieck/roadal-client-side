@@ -21,12 +21,12 @@ export const popup = async feature => {
     "Open": "Road is fully open."
   };
 
-  const createImage = image => {
-    const altText = `${name} - ${image.substring(image.lastIndexOf("/") + 1, image.lastIndexOf("@"))}`;
+  const createImage = (image, i) => {
+    const alt = `${name} - ${image.substring(image.lastIndexOf("/") + 1, image.lastIndexOf("@"))}`;
 
     return `
-      <a href="#" class="carousel-item active site-image-link" data-image-src="${image.replace("@360p", "@720p")}">
-        <img class="d-block w-100" src="${image}" alt="${altText}">
+      <a href="#" class="carousel-item ${i ? "" : "active"} site-image-link" data-image-src="${image.replace("@360p", "@720p")}" data-alt="${alt}">
+        <img class="d-block w-100" src="${image}" alt="${alt}">
       </a>
     `;
   };

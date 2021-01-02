@@ -139,24 +139,34 @@
     ------------------------------------------------------------------------------------------------------------------>
       
     <!-- Site image viewer ---------------------------------------------------------------------------------------------------------->
-    <div class="modal fade" name="image-viewer-modal" id="image-viewer-modal" tabindex="-1" role="dialog" aria-labelledby="image-viewer-header" aria-hidden="true">
+    <div class="modal fade full-screen-modal" name="image-viewer" id="image-viewer" tabindex="-1" role="dialog" aria-labelledby="image-viewer-header" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
-        <!-- header -->
-        <div class="modal-header">
-          <h5 class="modal-title" id="image-viewer-header">Site Images</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <!-- body -->
-        <div class="modal-body">
-          <div id="image-view"></div>
-        </div>
-        <!-- footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
-        </div>
+          <!-- header -->
+          <div class="modal-header py-2">
+            <h5 class="modal-title text-pri" id="image-viewer-header">
+              <span class="title d-inline-block bg-pri">Site Images</span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="text-sec" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- body -->
+          <div class="modal-body">
+            <div id="site-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner"></div>
+              <a class="carousel-control-prev" href="#site-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#site-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <!-- footer -->
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>

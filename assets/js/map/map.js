@@ -62,13 +62,15 @@ const onEachFeature = async (feature, layer) => {
   };
 
   const markerURL = markerURLs[passability];
-  console.info(markerURL)
   const icon = new MarkerIcon({ iconUrl: markerURL });
   layer.setIcon(icon).addTo(map);
 
   const html = await popup(feature);
   layer.bindPopup(html);
-  layer.on('click', async e => layer.openPopup());
+  layer.on('click', async e => {
+    layer.openPopup();
+    siteImageClick();
+  });
 };
 
 // Create additional Control placeholders
@@ -118,6 +120,40 @@ const addEvents = async () => {
 
   $('.basemap').on('change', (e) => switchBaseLayer(e.target.value));
   $('#locate').on('click', () => locateUser());
+};
+
+const siteImageClick = () => {
+  const $siteImageLinks = $(".site-image-link");
+  $siteImageLinks.click(function (e) {
+    showImageViewer(this);
+  });
+}
+
+const showImageViewer = (link) => {
+  const links = link.parentElement.children;
+  const name = link.closest(".popup").querySelector(".header").textContent;
+  const $images = Array.from(links).map((lnk, i) => createImage(lnk.dataset.imageSrc, lnk.dataset.alt, i));
+  const $imageViewer = $("#image-viewer");
+  const $imageContainer = $("#site-carousel .carousel-inner");
+  $imageContainer.append($images);
+  $imageViewer.find(".modal-title").text(name);
+  $imageViewer.modal("show");
+}
+
+const createImage = (src, alt, i) => {
+  const $carouselItem = $("<div />", {
+    class: `carousel-item ${i ? "" : "active"}`
+  });
+
+  const $img = $("<img />", {
+    class: "d-block w-100",
+    src,
+    alt
+  });
+
+  $carouselItem.append($img);
+
+  return $carouselItem;
 };
   
 export { initMap };

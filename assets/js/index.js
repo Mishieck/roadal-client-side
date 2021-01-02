@@ -26,12 +26,6 @@ const addEvents = () => {
     $('#sidebar').addClass('hide').removeClass('show');
     $('.overlay').addClass('hide').removeClass('show');
   });
-
-  $('form').on('submit', function(e) {
-      e.preventDefault();
-      se
-      lectFormHandler(this);
-  });
   
   // $('#nav-dd-btn').on('click', showNotifications);
 };

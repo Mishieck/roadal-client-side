@@ -1,6 +1,7 @@
 @import url("/assets/css/root.css");
 @import url("./sidebar.css");
 @import url("./popup.css");
+@import url("./leaflet-controls.css");
 
 
 /* Global */
@@ -140,7 +141,7 @@ body:before {
   padding-right: 0.5em;
 }
 .footer a {
-  color: #ff8080;
+  color: #b0b0ff;
 }
 
 /* Modals */

@@ -1,11 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Roadal - Contact</title>
+
+    <!-- ****** faviconit.com favicons ****** -->
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/assets/img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/assets/img/favicons/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/assets/img/favicons/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16.png">
+    <link rel="apple-touch-icon" href="/assets/img/favicons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/favicon-144.png">
+    <meta name="msapplication-config" content="/assets/xml/browserconfig.xml">
+    <!-- ****** faviconit.com favicons ****** -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/contact.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pri">
+      <div class="container">
+        <a class="navbar-brand" href="/index.htm">
+          <img src="/assets/img/logo.svg" class="logo d-inline-block align-top" alt="Logo">
+          Roadal
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.htm">
+                <i class="fa fa-home"></i> Home
+              </span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/assets/htm/about.htm">
+                <i class="fa fa-info-circle"></i> About
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/assets/htm/contact.htm">
+                <i class="fa fa-phone"></i> Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+    <!-- Main -->
+    <main id="main" class="m-0 px-0 py-5 d-flex justify-content-center align-items-center">
+      <div class="container shadow rounded-lg overflow-hidden flex-column justify-content-center align-items-center flex-lg-row">
+        <div class="row p-3 px-lg-0">
+          <div id="icon-container" class="col-12 col-lg-1 px-0 py-3 px-lg-3 py-lg-0 d-flex flex-lg-column justify-content-between align-items-center bg-sec">
+            <span class="">
+              <a href="#contact-form" class="btn btn-circle">
+                <i class="fa fa-envelope"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="tel:+260950434361" class="btn btn-circle">
+                <i class="fa fa-phone"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="tel:+260950434361" class="btn btn-circle">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="https:/facebook.com" class="btn btn-circle" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="https:/twitter.com" class="btn btn-circle" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="https:/instagram.com" class="btn btn-circle" target="_blank">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </span>
+            <span class="">
+              <a href="https:/linkedin.com" class="btn btn-circle" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </span>
+          </div>
   
-</body>
+          <div id="map" class="col-12 col-lg-6 rounded-lg bg-pri"></div>
+  
+          <div id="contact-form" class="col-12 col-lg-5 px-0 py-3 px-lg-3 py-lg-0">
+            <div class="container-fluid mb-4">
+              <h1 class="h3 text-center text-pri">Send Us a Message</h1>
+            </div>
+            <form name="contact-form" class="">
+              <div class="container-fluid px-0">
+                <div class="row">
+                  <div class="col-12 px-3">
+                    <div class="alert alert-info alert-dismissible fade show d-none" role="alert">
+                        <span class="alert-msg">Contact us via email</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                  </div>
+                  <div class="form-group col-12 col-md-6">
+                    <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="First name" required="required">
+                  </div>
+                  <div class="form-group col-12 col-md-6">
+                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last name" required="required">
+                  </div>
+                  <div class="form-group col-12">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
+                  </div>
+                  <div class="col-12">
+                    <textarea rows="5"id="message"  name="message" class="form-control" placeholder="Message" required="required"></textarea>
+                  </div>
+                  <div class="col-12 py-3 d-flex justify-content-end">
+                    <button type="submit" class="btn rounded-lg submit">
+                      <i class="fa fa-paper-plane"></i><span class="ml-2">Send</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-dark">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto text-light">
+          <span>Copyright &copy; Roadal 2020 - 2021</span>
+          <span> | </span>
+          <span>Developer: <a href="https://mishieck.github.io" target="_blank" class="text-sec">Mishieck Mwale</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="/assets/js/contact.js"></script>
+  </body>
 </html>

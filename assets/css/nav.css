@@ -1,13 +1,4 @@
-.navbar {
-  height: 3em;
-}
-.navbar #nav-container #search-btn i {
-  font-size: 1.2em;
-}
-.navbar #nav-container #nav-dropdown a i {
-  font-size: 1.2em;
-}
-
-.wrapper {
-  overflow: hidden;
+.logo {
+  object-fit: contain;
+  width: 30px;
 }

@@ -1,6 +1,7 @@
 :root {
   --primary-color: #3f7ffe;
   --secondar-color: #ff0000;
+  --dark-color: rgb(63, 63, 63);
 }
 
 
@@ -29,7 +30,7 @@ a.nostyle:visited {
 }
 
 .text-pri {
-  color: #0490cf !important;
+  color: var(--primary-color) !important;
 }
 
 .bg-pri {
@@ -39,23 +40,23 @@ a.nostyle:visited {
 }
 
 .text-sec {
-  color: #f4b619 !important;
+  color: var(--secondary-color) !important;
 }
 
 .bg-sec {
   background-image: none !important;
-  background: #f4b619 !important;
-  background-color: #f4b619 !important;
+  background: var(--secondary-color) !important;
+  background-color: var(--secondary-color) !important;
 }
 
-.text-ter {
-  color: #444488 !important;
+.text-dark {
+  color: var(--dark-color) !important;
 }
 
-.bg-ter {
+.bg-dark {
   background-image: none !important;
-  background: #444488 !important;
-  background-color: #444488 !important;
+  background: var(--dark-color) !important;
+  background-color: var(--dark-color) !important;
 }
 
 /*Bootstrap model*/

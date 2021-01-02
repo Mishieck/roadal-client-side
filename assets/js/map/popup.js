@@ -59,15 +59,11 @@ export const popup = async feature => {
 
   const html = `
     <section class="popup m-0 p-0">
-      <header class="header h5 text-center">
-        Site Information
-      </header>
+      <header class="header h5 text-center font-weight-bold">${name}</header>
 
       <div class="border-top my-1"></div>
 
       <main>
-        <div class="ml-2 text-nowrap mt-3 sitename">${name}</div>
-        <div class="border-top my-1"></div>
         <div class="ml-2 text-nowrap mt-3 site-coords">${coordinates[1]} ${coordinates[0]}</div>
         <div class="border-top my-1"></div>
         <div class="mt-3 passability">

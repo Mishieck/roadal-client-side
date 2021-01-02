@@ -46,7 +46,7 @@
       "properties": {
         "name": "Munali Roundabout",
         "amenity": "roundabout",
-        "passability": "Fully Closed",
+        "passability": "Closed",
         "images": [
           "/assets/img/sites/munali/munali-1@360p.jpg",
           "/assets/img/sites/munali/munali-2@360p.jpg",

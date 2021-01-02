@@ -1,0 +1,52 @@
+@import url("/assets/css/root.css");
+@import url("/assets/css/nav.css");
+@import url("/assets/css/main.css");
+@import url("/assets/css/leaflet-controls.css");
+
+
+#icon-container .btn-circle, .submit {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: inherit;
+}
+
+#icon-container .btn-circle {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#icon-container .btn-circle:hover, .submit:hover {
+  color: #ffffff;
+  background-color: var(--primary-color);
+}
+
+#map {
+  border: 1px solid var(--primary-color);
+  min-height: 300px;
+}
+
+#contact-form .heading {
+  color: var(--primary-color);
+}
+
+#contact-form .form-control {
+  border: 2px solid var(--primary-color);
+}
+
+#contact-form .form-control:focus {
+  border: 2px solid var(--dark-color);
+}
+
+@media (min-width: 768px) {
+  #icon-container .btn-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+  #icon-container .btn-circle > .fa {
+    font-size: 1.2rem;
+  }
+}

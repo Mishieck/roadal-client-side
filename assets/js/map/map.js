@@ -55,11 +55,14 @@ const getOverlays = async () => (await fetch('/assets/json/main.json')).json();
 const onEachFeature = async (feature, layer) => {
   const passability = feature.properties.passability;
 
-  const markerURL = feature.properties.passability === 'Fully Closed' ? "/assets/img/icons/road-signs/red-marker.svg"
-  : feature.properties.passability === 'Partially Closed' ? "/assets/img/icons/road-signs/yellow-marker.svg"
-  : feature.properties.passability === 'Open' ? "/assets/img/icons/road-signs/green-marker.svg"
-  : "/assets/img/icons/road-signs/red-marker.svg";
+  const markerURLs = {
+    "Closed": "/assets/img/icons/road-signs/red-marker.svg",
+    "Partially Closed": "/assets/img/icons/road-signs/yellow-marker.svg",
+    "Open": "/assets/img/icons/road-signs/green-marker.svg"
+  };
 
+  const markerURL = markerURLs[passability];
+  console.info(markerURL)
   const icon = new MarkerIcon({ iconUrl: markerURL });
   layer.setIcon(icon).addTo(map);
 

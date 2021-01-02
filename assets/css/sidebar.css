@@ -31,6 +31,9 @@
 #sidebar #sidebar-header #brand-label {
   font-size: 1.5em;
 }
+#sidebar #sidebar-header #brand-label:hover {
+  color: #ff0000 !important;
+}
 #sidebar .border-lg {
   border-width: 0.1em !important;
 }
@@ -40,7 +43,7 @@
 #sidebar ul .sidebar-heading {
   font-size: 0.7em;
   font-weight: bold;
-  color: #d6d6d6;
+  color: #ffffff;
 }
 #sidebar ul li {
   margin-left: 0.5em;
@@ -50,7 +53,7 @@
   width: 100%;
 }
 #sidebar ul li a:hover {
-  background-color: #0a6894;
+  background-color: #2f6fee;
 }
 #sidebar ul li #allione-img {
   object-fit: contain;

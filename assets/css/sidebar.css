@@ -22,37 +22,39 @@
 #sidebar a {
   cursor: pointer;
 }
+
 #sidebar #sidebar-header .logo {
   width: 32px;
 }
+
 #sidebar #sidebar-header #brand-label {
   font-size: 1.5em;
 }
-#sidebar .navbar-brand:hover {
-  color: var(--secondary-color) !important;
-}
+
 #sidebar .border-lg {
   border-width: 0.1em !important;
 }
+
 #sidebar ul .border-low {
   border-top: 1px #c5c5c5 solid;
 }
+
 #sidebar ul .sidebar-heading {
   font-size: 0.7em;
   font-weight: bold;
   color: #ffffff;
 }
+
 #sidebar ul li {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+
 #sidebar ul li a {
   width: 100%;
 }
+
 #sidebar ul li a:hover {
+  color: white;
   background-color: #2f6fee;
-}
-#sidebar ul li #allione-img {
-  object-fit: contain;
-  height: 24px;
 }

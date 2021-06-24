@@ -3,9 +3,9 @@
 @import url("/assets/css/main.css");
 @import url("/assets/css/leaflet-controls.css");
 
-
-#icon-container .btn-circle, .submit {
-  border: 1px solid var(--primary-color);
+#icon-container .btn-circle,
+.submit {
+  border: 2px solid var(--primary-color);
   color: var(--primary-color);
   background-color: inherit;
 }
@@ -18,13 +18,14 @@
   align-items: center;
 }
 
-#icon-container .btn-circle:hover, .submit:hover {
+#icon-container .btn-circle:hover,
+.submit:hover {
   color: #ffffff;
   background-color: var(--primary-color);
 }
 
 #map {
-  border: 1px solid var(--primary-color);
+  border-width: 2px;
   min-height: 300px;
 }
 
@@ -33,7 +34,7 @@
 }
 
 #contact-form .form-control {
-  border: 2px solid var(--primary-color);
+  border-width: 2px;
 }
 
 #contact-form .form-control:focus {
